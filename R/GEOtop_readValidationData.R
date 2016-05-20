@@ -1,3 +1,27 @@
+NULL
+
+#'  Read point output from GEOtop for verification of the model results
+#' 
+#'	Read point output from GEOtop for verification of the model results
+#' 
+# @param wpath			path into simulation folder
+#' @param obs				zoo object, data frame, with specific names of variables used for validate the model results; name conventions according to CF Standard Name Table \url{http://cfconventions.org}.
+#' @param soil_files				boolean, TRUE: soil files are provided as GEOtop input. FALSE: soil is parameterized in the geotop.inpts file
+#' @param save_rData				boolean, if TRUE (default) data is stored in working directory (simulation folder)
+#' 
+#' 
+#' 
+#' @export
+#' @author 	Johannes Brenner
+#' 
+#' 
+#
+#
+#
+
+
+
+
 # Function to load GEOtop point simulation output based on observations
 
 #  wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/HiResAlp/1D/Montecini_pnt_1_225_B2_007/"

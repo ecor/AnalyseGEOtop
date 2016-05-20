@@ -1,3 +1,69 @@
+NULL
+#
+#'
+#' 
+#' 
+#'  Analysis of GEOtop one-dimensional simulations for the Montecini domain
+#' 
+#' Reading and analysing GEOTtop simulations providing multiple point output for the Montecini domain (micro-meteo stations B, I, and P). 
+#' 
+#' 
+#' 
+#' @param 	peth			path pointing into simulation folder
+
+#' @param 	model_run			name of simulation folder
+	
+#' @param 	stations			character vector, names of GEOtop output sites
+	
+#' @param  val_aggr				aggregation performed on output data. \code{"h"}: hourly; \code{"d"}: daily
+	
+#' @param read_data				boolean, TRUE: GEOtop point output is read; FALSE: R workspace point.RData (from former run) is read
+		
+#' @param calibrate 				boolean, TRUE: calibrated SMC sensor data is used for comparision with simulated SMC; FALSE: use of uncalibrated SMC data
+			
+#' @param use_swc_liq				boolean, TRUE: only liquid component of SMC is used for comparision with simulated SMC; FALSE: use of liquid and solid SMC data
+			
+#' @param soil_files				boolean, TRUE: soil files are provided as GEOtop input. FALSE: soil is parameterized in the geotop.inpts file
+			
+#' @param lc_classes				character vector, names of landcover classes in GEOtop simulation
+		
+#' @param linux				boolean, TRUE: working on linux laptop, FALSE: working on windows laptop; for path retrieval via \code{data(SWCinfo)}
+#' 			
+#'
+#' 
+#' 
+#' 
+#' 				
+#' 				
+#' @references Endrizzi, S., Gruber, S., Amico, M. D., & Rigon, R. (2014). \strong{GEOtop 2.0 : simulating the combined energy and water balance at and below the land surface accounting for soil freezing , snow cover and terrain effects.} \emph{Geosci. Model Dev., 7, 2831-2857}. doi:10.5194/gmd-7-2831-2014
+#
+#\author{
+#	Johannes Brenner, \email{Johannes.Brenner@eurac.edu}
+#}
+#	Observed SMC data derived from function ... (package)
+#	Observed Soil Temperature data from function ... (package)
+#	Observed latent and sensible heat data 
+#}
+#
+#%% ~Make other sections like Warning with \section{Warning }{....} ~
+#		
+#		\seealso{
+#			%% ~~objects to See Also as \code{\link{help}}, ~~~
+#		}
+#\examples{
+#}
+#% Add one or more standard keywords, see file 'KEYWORDS' in the
+#		% R documentation directory.
+#		\keyword{ ~kwd1 }
+#\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+#		
+#
+#
+
+
+
+
+
 # Analysing GEOtop model output  
 # run Analysis of GEOtop simulation for multiple point output
 # plus validation on ET, SMC, Soil Temperature for specific stations (Mazia)

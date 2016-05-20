@@ -1,3 +1,12 @@
+NULL
+#' GEOtop_updateLookUpTbl
+#' 
+#' 
+#' 
+#' @export 
+#' 
+
+
 GEOtop_updateLookUpTbl <- function() {
   
   lookup_tbl_observation <- read.csv("/home/jbr/GitHub/AnalyseGEOtop/data/tbl_observations")

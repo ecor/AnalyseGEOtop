@@ -1,14 +1,30 @@
-# Function to load GEOtop point simulation output based on observations
-
-#  wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/HiResAlp/1D/Montecini_pnt_1_225_B2_007/"
-#  wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/MonaLisa/1D/Kaltern/sim006"
-#  data("observations_B2")
-#  
-#  load(file.path(wpath, "obs", "observation.RData"))
-#  names(observation) <- c("hour", "day")
-#  obs <- observation
-#  
-#  obs   <- list(hour=B2_h, day=B2_d)
+NULL
+#' Function to load GEOtop point simulation output based on observations
+#'
+#' 
+#' @export
+#' 
+#' 
+#' 
+#' 
+#' @importFrom dplyr '%>%'
+#' 
+#' 
+#' 
+#' 
+#' @examples
+#'  
+#' wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/HiResAlp/1D/Montecini_pnt_1_225_B2_007/"
+#' wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/MonaLisa/1D/Kaltern/sim006"
+#' data("observations_B2")
+#' 
+#' load(file.path(wpath, "obs", "observation.RData"))
+#' names(observation) <- c("hour", "day")
+#' obs <- observation
+#' 
+#' obs   <- list(hour=B2_h, day=B2_d)
+#' 
+#' 
 
 GEOtop_ReadPointData <- function(wpath, 
                                  soil_output_files=c("SoilLiqContentProfileFile","SoilIceContentProfileFile", "SoilLiqWaterPressProfileFile", "SoilAveragedTempProfileFile"), 

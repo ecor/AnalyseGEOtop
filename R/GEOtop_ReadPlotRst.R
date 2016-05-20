@@ -1,4 +1,63 @@
-# plot maps from raster 
+NULL
+#' 
+#' Visualize asc raster map
+#' 
+#' Visualize .asc raster map (GEOtop map output) with ggplot
+#' 
+#' 
+#' 
+#' @param map  character, full path and name of .asc map to visualize
+#' @param date character, date characterization
+#' @param variable		character, variable characterization
+#' @param numeric  numeric, vector setting y-limits for plot
+#' @param legend   character, legend characterization, e.g. \code{"vol\%"} for soil moisture data
+#' @param lowcol   minimum colour for visualization, default is \code{"#f7fbff"}
+#' @param highcol  maximum colour for visualization, default is \code{"#08306b"}; default is creating a blue colour range
+#' 
+#' 
+#' 
+#' @export
+#' 
+#' 
+#' @importFrom raster raster rasterToPoints
+#' @importFrom RSAGA read.ascii.grid
+#' @importFrom ggplot2 ggtitle ggplot aes theme_bw geom_raster coord_equal scale_fill_gradient element_text element_blank 
+#' 
+
+#}
+#\details{
+#	%%  ~~ If necessary, more details than the description above ~~
+#}
+#' @return	ggplot object
+#}
+#\references{
+#	%% ~put references to the literature/web site here ~
+#}
+#\author{
+#' @author	Johannes Brenner \email{Johannes.Brenner@eurac.edu}
+#}
+#\note{
+#	%%  ~~further notes~~
+#}
+#
+#%% ~Make other sections like Warning with \section{Warning }{....} ~
+#		
+#		\seealso{
+#			%% ~~objects to See Also as \code{\link{help}}, ~~~
+#		}
+#\examples{
+#	
+#}
+#% Add one or more standard keywords, see file 'KEYWORDS' in the
+#		% R documentation directory.
+#		\keyword{ ~kwd1 }
+#\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+#		
+#		
+##'		
+#
+#
+## plot maps from raster 
 
 GEOtop_ReadPlotRst <- function(map, date, variable, layer, limits, legend,#
                                lowcol="#f7fbff", highcol="#08306b")

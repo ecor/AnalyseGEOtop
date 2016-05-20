@@ -1,3 +1,50 @@
+NULL
+#' GEOtop_Read_multiplot
+#' 
+#' Read multi point output from GEOtop simulation using the \pkg{geotopbricks} package.
+#' 
+#\name{GEOtop_Read_multipoint}
+#\alias{GEOtop_Read_multipoint}
+#%- Also NEED an '\alias' for EACH other topic documented here.
+#		\title{
+##'			Read multi point output from GEOtop simulation
+#		}
+#\description{
+#	Read multi point output from GEOtop simulation using the \pkg{geotopbricks} package.
+#}
+#\usage{
+#	GEOtop_Read_multipoint(path, model_run, stations, val_aggr, soil_files, lc_classes, linux)
+#}
+#%- maybe also 'usage' for other objects documented here.
+#		\arguments{
+#			\item{path}{
+#' @param path				path pointing to simulation folder
+#			}
+#			\item{model_run}{
+#' @param model_run				name of simulation folder
+#			}
+#			\item{stations}{
+#' @param station				character vector, names of GEOtop output sites
+#			}
+#			\item{val_aggr}{
+#' @param val_aggr				aggregation performed on output data. "h": hourly; "d": daily
+#			}
+#			\item{soil_files}{
+#' @param soil_files				boolean, TRUE: soil files are provided as GEOtop input. FALSE: soil is parameterized in the geotop.inpts file
+#			}
+#			\item{lc_classes}{
+#' @param lc_classes				character vector, names of landcover classes in GEOtop simulation
+
+#' @param linux				boolean, TRUE: working on linux laptop, FALSE: working on windows laptop; for path retrieval via \emph{data(SWCinfo)}
+
+#' @references Endrizzi, S., Gruber, S., Amico, M. D., & Rigon, R. (2014). \strong{GEOtop 2.0 : simulating the combined energy and water balance at and below the land surface accounting for soil freezing , snow cover and terrain effects.} \emph{Geosci. Model Dev., 7, 2831-2857}. doi:10.5194/gmd-7-2831-2014
+
+#' @author 	Johannes Brenner, \email{Johannes.Brenner@eurac.edu}
+
+#' @note Slow, as point files are read for each variable!
+
+#
+
 # Read GEOtop model point output (multiple points)
 # --> slow / increase!
 # it is only necessary to read point output data once!
