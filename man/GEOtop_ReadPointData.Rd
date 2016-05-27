@@ -13,8 +13,12 @@ Function to load GEOtop point simulation output based on observations
 }
 \examples{
  
-wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/HiResAlp/1D/Montecini_pnt_1_225_B2_007/"
-wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/MonaLisa/1D/Kaltern/sim006"
+wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,
+share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/
+HiResAlp/1D/Montecini_pnt_1_225_B2_007/"
+wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,
+share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/
+MonaLisa/1D/Kaltern/sim006"
 data("observations_B2")
 
 load(file.path(wpath, "obs", "observation.RData"))

@@ -36,7 +36,7 @@ NULL
 #' @importFrom hydroGOF ggof
 #' @importFrom sp read.asciigrid
 #' 
-#' @author	Johannes Brenner, \email{Johannes.Brenner@eurac.edu}
+#' @author	Johannes Brenner 
 #' @examples 
 #'     
 #' ### TO DO 
@@ -598,7 +598,7 @@ pdf(paste(wpath,"Ppartitioning.pdf",sep=""), width = 21)
 
   if (Q_obs=="hour" | Q_obs=="day") {
     meteo_Q <- merge(meteo[,c(1,2,3)], discharge_daily[,c(1,2)])
-    plot.zoo(meteo_Q, ylab=c("Tair [°C]", "P [mm]", "Q [m^3/s]"), screens = c(1,2,2,3,3), main="Basin Mean Meteo , Discharge", 
+    plot.zoo(meteo_Q, ylab=c("Tair [deg C]", "P [mm]", "Q [m^3/s]"), screens = c(1,2,2,3,3), main="Basin Mean Meteo , Discharge", 
              type=c("l","h","h","l", "l"), col=c(grey(.2,.5), rgb(0,0,1,.75), rgb(1,1,0,.5), "black", rgb(1,0,0,.75)),
              xlab="", sub="x", lwd=c(1.2,1.2,1.2,1.5,2))
     text(x=0.25, y=0.69, labels = text[1], cex = 0.8)
@@ -607,7 +607,7 @@ pdf(paste(wpath,"Ppartitioning.pdf",sep=""), width = 21)
     
   } else {
     meteo_Q <- merge(meteo[,c(1,2,3)], discharge_daily[,c(1)])
-    plot.zoo(meteo_Q, ylab=c("Tair [°C]", "P [mm]", "Q [m^3/s]"), screens = c(1,2,2,3), main="Basin Mean Meteo , Discharge", 
+    plot.zoo(meteo_Q, ylab=c("Tair [deg C]", "P [mm]", "Q [m^3/s]"), screens = c(1,2,2,3), main="Basin Mean Meteo , Discharge", 
              type=c("l","h","h","l"), col=c(grey(.2,.5), rgb(0,0,1,.75), rgb(1,1,0,.5), "black"),
              xlab="", sub="x", lwd=c(1.2,1.2,1.2,1.5))
     text(x=0.25, y=0.69, labels = text[1], cex = 0.8)

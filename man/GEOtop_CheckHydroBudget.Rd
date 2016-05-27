@@ -34,7 +34,7 @@ Comparison of simulated and observed runoff (if provided). Checking the hydrolog
 
 }
 \author{
-Johannes Brenner, \email{Johannes.Brenner@eurac.edu}
+Johannes Brenner
 }
 \references{
 Endrizzi, S., Gruber, S., Amico, M. D., & Rigon, R. (2014). \strong{GEOtop 2.0 : simulating the combined energy and water balance at and below the land surface accounting for soil freezing , snow cover and terrain effects.} \emph{Geosci. Model Dev., 7, 2831-2857}. doi:10.5194/gmd-7-2831-2014
