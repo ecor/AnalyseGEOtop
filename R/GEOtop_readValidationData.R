@@ -10,6 +10,17 @@ NULL
 #' @param save_rData				boolean, if TRUE (default) data is stored in working directory (simulation folder)
 #' 
 #' 
+#' @importFrom stringr str_split 
+#' 
+#' 
+#' @importFrom grDevices dev.off grey grey.colors pdf rainbow rgb 
+#' @importFrom graphics abline axis barplot grid legend lines par plot polygon text title
+#' @importFrom stats aggregate ecdf qqplot sd time window 
+#' @importFrom utils data head read.csv read.table tail
+#' 
+#' @importFrom ggplot2 geom_text 
+#' 
+#' 
 #' 
 #' @export
 #' @author 	Johannes Brenner
@@ -31,12 +42,13 @@ NULL
 #  load(file.path(wpath, "obs", "observation.RData"))
 #  names(observation) <- c("hour", "day")
 #  obs <- observation
-#  
+#  ### ggExtra Geotop_VisSoilWaterRet_gg
 #  obs   <- list(hour=B2_h, day=B2_d)
 
 GEOtop_ReadValidationData <- function(wpath, obs, soil_files=TRUE, save_rData=TRUE)
 {
   # source lookup_tbl
+  lookup_tbl_observation <- NULL ##ec 20150526
   data(lookup_tbl_observation)
 #   lookup_tbl_observation <- apply(lookup_tbl_observation, 2, as.character)
 #   lookup_tbl_observation <- as.data.frame(lookup_tbl_observation)

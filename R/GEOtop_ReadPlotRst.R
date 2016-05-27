@@ -21,7 +21,7 @@ NULL
 #' 
 #' @importFrom raster raster rasterToPoints
 #' @importFrom RSAGA read.ascii.grid
-#' @importFrom ggplot2 ggtitle ggplot aes theme_bw geom_raster coord_equal scale_fill_gradient element_text element_blank 
+#' @importFrom ggplot2 ggtitle ggplot aes ggsave theme_bw theme geom_raster coord_equal scale_fill_gradient element_text element_blank 
 #' 
 
 #}
@@ -45,7 +45,7 @@ NULL
 #		\seealso{
 #			%% ~~objects to See Also as \code{\link{help}}, ~~~
 #		}
-#\examples{
+#\examples{ dB_getSWP
 #	
 #}
 #% Add one or more standard keywords, see file 'KEYWORDS' in the
@@ -70,6 +70,11 @@ GEOtop_ReadPlotRst <- function(map, date, variable, layer, limits, legend,#
   df <- data.frame(map.p)
   #Make appropriate column headings
   colnames(df) <- c("Longitude", "Latitude", "MAP")
+  ## ec 20160526
+  Longitude <- NULL
+  Latitude <- NULL
+  MAP <- NULL
+  ## end ec 20160526
 #   
   if (is.null(layer)) {
     var_layer_date <- paste(variable, " | ", date, sep=" ")

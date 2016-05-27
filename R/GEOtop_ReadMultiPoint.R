@@ -44,7 +44,7 @@ NULL
 #' @note Slow, as point files are read for each variable!
 
 #
-
+## data.tabe ggplot Geotop_VisSoilWaterRet_gg
 # Read GEOtop model point output (multiple points)
 # --> slow / increase!
 # it is only necessary to read point output data once!

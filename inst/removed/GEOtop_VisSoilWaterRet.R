@@ -1,5 +1,5 @@
 NULL
-#'		Visualisation Soil Water Retention Curve
+#'	Visualisation Soil Water Retention Curve
 #' 	
 #'	Visulisation of the Soil Water Retention Curve and hydraulic conductivity for model used in GEOtop (van Genuchten 1980, Mualem ...). Theoretical and parametererized physical soil water parameters are compared. For soil water and hydraulic conductivity calculation from soil water pressure head (hPa or cm water column) the package \pkg{soilwater} is used.
 #' 
@@ -36,15 +36,7 @@ NULL
 #' 
 #' @export 
 #' 
-#' 
-#' @importFrom grDevices dev.off grey grey.colors pdf rainbow rgb 
-#' @importFrom graphics abline axis barplot grid legend lines par plot polygon text title
-#' @importFrom stats aggregate ecdf qqplot sd time window 
-#' @importFrom utils data head read.csv read.table tail
-#' 
-#' 
-#' 
-#' 
+
 #' 
 #' 
 #' 
@@ -82,13 +74,13 @@ NULL
 #		% R documentation directory.
 #		\keyword{ ~kwd1 }
 #\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
-#		
+#		guides
 
 
 
-
-#'  visualize soil water retention curve and GEOtop model parameterization
-#'  using swc function from soilwater
+#' @examples
+#' #  visualize soil water retention curve and GEOtop model parameterization
+#' #  using swc function from soilwater
 #' 
 #'  data from point.RData (GEOtop_ReadMultiPoint)
 #' 
