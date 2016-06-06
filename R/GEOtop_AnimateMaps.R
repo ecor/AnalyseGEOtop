@@ -15,12 +15,12 @@ NULL
 #'
 #'  GEOtop output map animation. Using GEOtop_ReadPlotRst() to visualize GEOtop output maps in pdf format and ImageMagick to animate images.
 #' 
-#' @param path path into GEOtop simulation
+#' @param wpath path into GEOtop simulation
 #' @param mapkey keyword name; see package \emph{geotopbricks}, function \code{\link{get.geotop.inpts.keyword.value}}, argument \emph{keyword}
 #' @param layers default = NULL, for variables without layering e.g. snow water eqivalent; integer vector defining layers which should be processed for data with layerinf, e.g. soil moisture
 #' @param soil_files boolean, TRUE: soil files are provided as GEOtop input. FALSE: soil is parameterized in the geotop.inpts file
 #' @param variable character, variable characterization
-#' @param map numeric, vector setting y-limits for plot
+#' @param limits argument for \code{\link{GEOtop_ReadPlotRst}}
 #' @param legend character, legend characterization, e.g. \code{"vol\%"} for soil moisture data
 #' @param lowcol minimum colour for visualization, default = \code{"#f7fbff"}
 #' @param highcol maximum colour for visualization, default = "#08306b"; default is creating a blue       colour
@@ -31,6 +31,7 @@ NULL
 #' 
 #' @return 	.gif animation file in folder "path/gif"
 #}
+##### @param map numeric, vector setting y-limits for plot
 #\references{
 #	%% ~put references to the literature/web site here ~
 #}

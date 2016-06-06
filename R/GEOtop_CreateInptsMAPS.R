@@ -41,7 +41,7 @@ NULL
 #' @param bedrock 				boolean, TRUE: bedrock map provided in working directory, ascii format, name: soil.asc; FALSE: no bedrock map provided; default = FALSE
 #			}
 #			\item{SAGAENV}{
-#' @param 				SAGA environment, created with function \code{\link{rsaga.env}} of the \pkg{RSAGA} package
+#' @param SAGAENV environment, created with function \code{\link{rsaga.env}} of the \pkg{RSAGA} package
 #			}
 #			\item{mask_only_lc}{
 #' @param mask_only_lc				boolean, TRUE: mask only landcover map; FALSE: mask all maps and crop to data; default = FALSE

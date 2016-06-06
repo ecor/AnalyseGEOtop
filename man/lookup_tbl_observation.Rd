@@ -12,7 +12,7 @@ www.eurac.edu
 data(lookup_tbl_observation)
 }
 \description{
-lookup_tbl_observation ...WRITE A DESCRIPTION
+lookup_tbl_observation Conversion table to use between standardised variable names in observed data and GEOtop output.
 }
 \author{
 Johannes Brenner

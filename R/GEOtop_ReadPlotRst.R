@@ -9,7 +9,9 @@ NULL
 #' @param map  character, full path and name of .asc map to visualize
 #' @param date character, date characterization
 #' @param variable		character, variable characterization
-#' @param numeric  numeric, vector setting y-limits for plot
+
+#' @param layer layer to plot
+#' @param limits limits to plot
 #' @param legend   character, legend characterization, e.g. \code{"vol\%"} for soil moisture data
 #' @param lowcol   minimum colour for visualization, default is \code{"#f7fbff"}
 #' @param highcol  maximum colour for visualization, default is \code{"#08306b"}; default is creating a blue colour range
@@ -26,6 +28,7 @@ NULL
 
 #}
 #\details{
+##### @param numeric  numeric, vector setting y-limits for plot
 #	%%  ~~ If necessary, more details than the description above ~~
 #}
 #' @return	ggplot object

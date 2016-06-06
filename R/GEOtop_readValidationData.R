@@ -4,10 +4,10 @@ NULL
 #' 
 #'	Read point output from GEOtop for verification of the model results
 #' 
-# @param wpath			path into simulation folder
+#' @param wpath			path into simulation folder
 #' @param obs				zoo object, data frame, with specific names of variables used for validate the model results; name conventions according to CF Standard Name Table \url{http://cfconventions.org}.
-#' @param soil_files				boolean, TRUE: soil files are provided as GEOtop input. FALSE: soil is parameterized in the geotop.inpts file
-#' @param save_rData				boolean, if TRUE (default) data is stored in working directory (simulation folder)
+#' @param soil_files				boolean, \code{TRUE}: soil files are provided as GEOtop input. \code{FALSE}: soil is parameterized in the geotop.inpts file
+#' @param save_rData				boolean, if \code{TRUE} (default) data is stored in working directory (simulation folder)
 #' 
 #' 
 #' @importFrom stringr str_split 
@@ -49,7 +49,10 @@ GEOtop_ReadValidationData <- function(wpath, obs, soil_files=TRUE, save_rData=TR
 {
   # source lookup_tbl
   lookup_tbl_observation <- NULL ##ec 20150526
-  data(lookup_tbl_observation)
+ ## data(lookup_tbl_observation)
+  
+  lookup_tbl_observation_csv <- system.file('tool/lookup_tbl_observation.csv',packege="AnalyseGeotop") 
+  lookup_tbl_observation     <- read.table( lookup_tbl_observation_csv,sep=";",header=TRUE)	  
 #   lookup_tbl_observation <- apply(lookup_tbl_observation, 2, as.character)
 #   lookup_tbl_observation <- as.data.frame(lookup_tbl_observation)
   

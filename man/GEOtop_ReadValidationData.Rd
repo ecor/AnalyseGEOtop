@@ -7,11 +7,13 @@
 GEOtop_ReadValidationData(wpath, obs, soil_files = TRUE, save_rData = TRUE)
 }
 \arguments{
+\item{wpath}{path into simulation folder}
+
 \item{obs}{zoo object, data frame, with specific names of variables used for validate the model results; name conventions according to CF Standard Name Table \url{http://cfconventions.org}.}
 
-\item{soil_files}{boolean, TRUE: soil files are provided as GEOtop input. FALSE: soil is parameterized in the geotop.inpts file}
+\item{soil_files}{boolean, \code{TRUE}: soil files are provided as GEOtop input. \code{FALSE}: soil is parameterized in the geotop.inpts file}
 
-\item{save_rData}{boolean, if TRUE (default) data is stored in working directory (simulation folder)}
+\item{save_rData}{boolean, if \code{TRUE} (default) data is stored in working directory (simulation folder)}
 }
 \description{
 Read point output from GEOtop for verification of the model results

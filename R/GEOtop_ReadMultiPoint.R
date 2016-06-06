@@ -24,7 +24,7 @@ NULL
 #' @param model_run				name of simulation folder
 #			}
 #			\item{stations}{
-#' @param station				character vector, names of GEOtop output sites
+#' @param stations				character vector, names of GEOtop output sites
 #			}
 #			\item{val_aggr}{
 #' @param val_aggr				aggregation performed on output data. "h": hourly; "d": daily

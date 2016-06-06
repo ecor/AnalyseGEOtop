@@ -25,9 +25,9 @@ GEOtop_CreateInptsMAPS(dem, res, stream_gauge, name_gauge, preprocess = TRUE,
 
 \item{bedrock}{boolean, TRUE: bedrock map provided in working directory, ascii format, name: soil.asc; FALSE: no bedrock map provided; default = FALSE}
 
-\item{mask_only_lc}{boolean, TRUE: mask only landcover map; FALSE: mask all maps and crop to data; default = FALSE}
+\item{SAGAENV}{environment, created with function \code{\link{rsaga.env}} of the \pkg{RSAGA} package}
 
-\item{SAGA}{environment, created with function \code{\link{rsaga.env}} of the \pkg{RSAGA} package}
+\item{mask_only_lc}{boolean, TRUE: mask only landcover map; FALSE: mask all maps and crop to data; default = FALSE}
 }
 \value{
 GEOtop input maps, storged in working directory as ascii maps

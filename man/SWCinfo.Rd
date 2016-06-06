@@ -3,6 +3,8 @@
 \docType{data}
 \name{SWCinfo}
 \alias{SWCinfo}
+\alias{SWCinfoLIN}
+\alias{SWCinfoWIN}
 \title{SWCinfo}
 \format{data.frame}
 \source{

@@ -1,6 +1,12 @@
 NULL
 #' Function to load GEOtop point simulation output based on observations
 #'
+
+#' @param wpath path pointing into simulation folder
+#' @param soil_output_files output file keywords used in the function. Default is \code{c("SoilLiqContentProfileFile","SoilIceContentProfileFile", "SoilLiqWaterPressProfileFile", "SoilAveragedTempProfileFile")}
+#' @param soil_files				boolean, \code{TRUE}: soil files are provided as GEOtop input. \code{FALSE}: soil is parameterized in the geotop.inpts file
+#' @param save_rData				boolean, if \code{TRUE} (default) data is stored in working directory (simulation folder)
+#' 
 #' 
 #' @export
 #' 
@@ -14,27 +20,100 @@ NULL
 #' 
 #' @examples
 #'  
-#' wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,
-#' share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/
-#' HiResAlp/1D/Montecini_pnt_1_225_B2_007/"
-#' wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,
-#' share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/
-#' MonaLisa/1D/Kaltern/sim006"
+#' wpath <- system.file('simulation/Muntatschini_pnt_1_225_B2_004',package="AnalyseGeotop")
 #' data("observations_B2")
 #' 
-#' load(file.path(wpath, "obs", "observation.RData"))
-#' names(observation) <- c("hour", "day")
-#' obs <- observation
-#' 
-#' obs   <- list(hour=B2_h, day=B2_d)
+#' out <- GEOtop_ReadPointData(wpath, soil_files=TRUE, save_rData=TRUE)
 #' 
 #' 
+
+#
+# 
+#
+# load(file.path(wpath, "obs", "observation.RData"))
+# names(observation) <- c("hour", "day")
+# obs <- observation
+# 
+# obs   <- list(hour=B2_h, day=B2_d)
+# 
+# 
+
+
+#### ### @param wpath name with complete working path of a GEOtop simulation folder
+# 
+# ##"/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,
+# ##share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/
+# ###HiResAlp/1D/Montecini_pnt_1_225_B2_007/"
+# ##wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,
+# ###share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/
+# MonaLisa/1D/Kaltern/sim006"
+##
 
 GEOtop_ReadPointData <- function(wpath, 
                                  soil_output_files=c("SoilLiqContentProfileFile","SoilIceContentProfileFile", "SoilLiqWaterPressProfileFile", "SoilAveragedTempProfileFile"), 
                                  soil_files=TRUE, save_rData=TRUE)
 {
   
+	#print("blo!!")	
+#  # Evapotranspiration  
+	Evap_surface.mm.  <- NULL
+	Trasp_canopy.mm. <- NULL
+	# partitioning: 1 means full evaporation - 0 means full transpiration  
+	Evapotranspiration_Partitioning <- NULL 
+	Evap_surface.mm. <- NULL
+	Evapotranspiration.mm.<- NULL
+#  # precipitation
+	PrainPsnow_over_canopy.mm. <- NULL 
+	Psnow_over_canopy.mm.  <- NULL 
+	Prain_over_canopy.mm. <- NULL
+#  # partitioning: 1 means full rain - 0 means full snow  
+	Precipitation_part_over_canopy  <- NULL 
+	Prain_over_canopy.mm. <- NULL
+	PrainPsnow_over_canopy.mm. <- NULL
+#  # net shortwave energy flux  
+	Net_shortwave_flux_W.m2. <- NULL
+	SWin.W.m2. <- NULL
+	SWup.W.m2. <- NULL
+# # net shortwave energy flux  
+	Net_longwave_flux_W.m2. <- NULL 
+	LWin.W.m2. <- NULL
+	LWup.W.m2. <- NULL
+	##  # net radiation 
+	Net_radiation_W.m2.  <- NULL 
+	Net_shortwave_flux_W.m2. <- NULL
+	Net_longwave_flux_W.m2. <- NULL
+	### latent heat flux in air
+	Latent_heat_flux_over_canopy_W.m2. <- NULL 
+	Canopy_fraction... <- NULL
+	LEg_veg.W.m2. <- NULL
+	LEv.W.m2.  <- NULL
+	Canopy_fraction... <- NULL 
+	LEg_unveg.W.m2. <- NULL
+	### sensible heat flux in air
+	##  Sensible_heat_flux_over_canopy_W.m2. <- NULL
+	Canopy_fraction... <- NULL
+	Hg_veg.W.m2. <- NULL
+	Hv.W.m2. <- NULL
+	Canopy_fraction... <- NULL 
+	Hg_unveg.W.m2.<- NULL
+	### energy budget
+	Energy_budget_storage_W.m2. <- NULL
+	Net_radiation_W.m2. <- NULL
+	Latent_heat_flux_over_canopy_W.m2.  <- NULL 
+	Sensible_heat_flux_over_canopy_W.m2. <- NULL
+	Soil_heat_flux.W.m2. <- NULL
+#  
+	#print("ba")
+	#a <- ls()
+	#print(a)
+	#### end ec 20160526
+	
+	
+	
+	
+	
+	
+	
 # get x- , y-coordinates of output points
   if (file.exists(file.path(wpath,"listpoints.txt")))
   {
@@ -48,6 +127,8 @@ GEOtop_ReadPointData <- function(wpath,
   
   level <- 1:length(xpoints)
 # read point data with specified keyword  
+	
+ ########### print("ba ba!!")		
   point_data <- get.geotop.inpts.keyword.value(keyword="PointOutputFile", wpath=wpath,
                                                  raster=FALSE,
                                                  data.frame=TRUE,
@@ -56,60 +137,11 @@ GEOtop_ReadPointData <- function(wpath,
 												 tz="Etc/GMT+1")
   
 										 
-  #### ec 20160526
+  #### ec 20160
+  ############print(names(point_data))
   
-  # Evapotranspiration  
-  Evap_surface.mm.  <- NULL
-  Trasp_canopy.mm. <- NULL
-  # partitioning: 1 means full evaporation - 0 means full transpiration  
-  Evapotranspiration_Partitioning <- NULL 
-  Evap_surface.mm. <- NULL
-  Evapotranspiration.mm.<- NULL
-  # precipitation
-  PrainPsnow_over_canopy.mm. <-- NULL 
-  Psnow_over_canopy.mm.  <- NULL 
-  Prain_over_canopy.mm. <-- NULL
-  # partitioning: 1 means full rain - 0 means full snow  
-  Precipitation_part_over_canopy  <- NULL 
-  Prain_over_canopy.mm. <- NULL
-  PrainPsnow_over_canopy.mm. <- NULL
-  # net shortwave energy flux  
-  Net_shortwave_flux_W.m2. <- NULL
-  SWin.W.m2. <- NULL
-  SWup.W.m2. <- NULL
-  # net shortwave energy flux  
-  Net_longwave_flux_W.m2. <- NULL 
-  LWin.W.m2. <- NULL
-  LWup.W.m2. <- NULL
-  # net radiation 
-  Net_radiation_W.m2.  <- NULL 
-  Net_shortwave_flux_W.m2. <- NULL
-  Net_longwave_flux_W.m2. <- NULL
-# latent heat flux in air
-  Latent_heat_flux_over_canopy_W.m2. <- NULL 
-  Canopy_fraction... <- NULL
-  LEg_veg.W.m2. <- NULL
-  LEv.W.m2.  <- NULL
-  Canopy_fraction... <- NULL 
-  LEg_unveg.W.m2. <- NULL
-# sensible heat flux in air
-  Sensible_heat_flux_over_canopy_W.m2. <- NULL
-  Canopy_fraction... <- NULL
-  Hg_veg.W.m2. <- NULL
-  Hv.W.m2. <- NULL
-  Canopy_fraction... <- NULL 
-  Hg_unveg.W.m2.<- NULL
-# energy budget
-  Energy_budget_storage_W.m2. <- NULL
-  Net_radiation_W.m2. <- NULL
-  Latent_heat_flux_over_canopy_W.m2.  <- NULL 
-  Sensible_heat_flux_over_canopy_W.m2. <- NULL
-  Soil_heat_flux.W.m2. <- NULL
-  
-  
-  #### end ec 20160526
 										 
-  										 
+  							 
 										 
 										 
   dt <- as.data.table(point_data)
@@ -118,7 +150,7 @@ GEOtop_ReadPointData <- function(wpath,
   
  
 # get variables direct or postprocessed from point data 
-
+	
   out <- 
   dt %>%
   # Evapotranspiration  
@@ -203,6 +235,7 @@ GEOtop_ReadPointData <- function(wpath,
       }
     }
   
+	
 # zoo object
   out <- zoo(out[, -c(1:5), with=F], time(point_data))  
     

@@ -8,24 +8,24 @@ GEOtop_ReadPointData(wpath, soil_output_files = c("SoilLiqContentProfileFile",
   "SoilIceContentProfileFile", "SoilLiqWaterPressProfileFile",
   "SoilAveragedTempProfileFile"), soil_files = TRUE, save_rData = TRUE)
 }
+\arguments{
+\item{wpath}{path pointing into simulation folder}
+
+\item{soil_output_files}{output file keywords used in the function. Default is \code{c("SoilLiqContentProfileFile","SoilIceContentProfileFile", "SoilLiqWaterPressProfileFile", "SoilAveragedTempProfileFile")}}
+
+\item{soil_files}{boolean, \code{TRUE}: soil files are provided as GEOtop input. \code{FALSE}: soil is parameterized in the geotop.inpts file}
+
+\item{save_rData}{boolean, if \code{TRUE} (default) data is stored in working directory (simulation folder)}
+}
 \description{
 Function to load GEOtop point simulation output based on observations
 }
 \examples{
  
-wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,
-share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/
-HiResAlp/1D/Montecini_pnt_1_225_B2_007/"
-wpath <- "/run/user/1000/gvfs/smb-share:server=sdcalp01.eurac.edu,
-share=data2/Simulations/Simulation_GEOtop_1_225_ZH/Vinschgau/SimTraining/BrJ/
-MonaLisa/1D/Kaltern/sim006"
+wpath <- system.file('simulation/Muntatschini_pnt_1_225_B2_004',package="AnalyseGeotop")
 data("observations_B2")
 
-load(file.path(wpath, "obs", "observation.RData"))
-names(observation) <- c("hour", "day")
-obs <- observation
-
-obs   <- list(hour=B2_h, day=B2_d)
+out <- GEOtop_ReadPointData(wpath, soil_files=TRUE, save_rData=TRUE)
 
 
 }

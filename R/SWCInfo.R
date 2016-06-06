@@ -9,4 +9,8 @@ NULL
 #' @format data.frame
 #' @source www.eurac.edu
 #' @author Johannes Brenner
+#' 
+#' @aliases SWCinfoLIN SWCinfoWIN
+#' 
+#' 
 NULL

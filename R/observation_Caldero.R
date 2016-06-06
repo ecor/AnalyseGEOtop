@@ -1,12 +1,14 @@
 NULL
-#' @name observation_Caldero
+#' @name observations_Caldero
 #' 
-#' @rdname observation_Caldero
-#' @title observation_Caldero
-#' @description lookup_tbl_observation ...WRITE A DESCRIPTION
+#' @rdname observations_Caldero
+#' @title observations_Caldero
+#' @description lookup_tbl_observation Observational data Caldaro/Kaltern station, half hourly and daily data aggregation
 #' @docType data
-#' @usage data(observation_Caldero)
-#' @format data.frame
+#' @usage data(observations_Caldero)
+#' @format list containing zoo objects (half hourly and daily data)
 #' @source www.eurac.edu
 #' @author Johannes Brenner
+#' 
+#' @aliases Caldero_30min Caldero_d   
 NULL

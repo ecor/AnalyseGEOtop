@@ -14,13 +14,15 @@ GEOtop_ReadPlotRst(map, date, variable, layer, limits, legend,
 
 \item{variable}{character, variable characterization}
 
+\item{layer}{layer to plot}
+
+\item{limits}{limits to plot}
+
 \item{legend}{character, legend characterization, e.g. \code{"vol\%"} for soil moisture data}
 
 \item{lowcol}{minimum colour for visualization, default is \code{"#f7fbff"}}
 
 \item{highcol}{maximum colour for visualization, default is \code{"#08306b"}; default is creating a blue colour range}
-
-\item{numeric}{numeric, vector setting y-limits for plot}
 }
 \value{
 ggplot object

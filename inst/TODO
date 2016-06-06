@@ -1,0 +1,45 @@
+#  # Evapotranspiration  
+  "Evap_surface.mm. "
+  "Trasp_canopy.mm."
+  # partitioning: 1 means full evaporation - 0 means full transpiration  
+  "Evapotranspiration_Partitioning" 
+ Evap_surface.mm."
+  "Evapotranspiration.mm.<- NULL
+#  # precipitation
+  "PrainPsnow_over_canopy.mm. <-- NULL 
+  "Psnow_over_canopy.mm. " 
+  "Prain_over_canopy.mm. <-- NULL
+#  # partitioning: 1 means full rain - 0 means full snow  
+  "Precipitation_part_over_canopy " 
+  "Prain_over_canopy.mm."
+  "PrainPsnow_over_canopy.mm."
+#  # net shortwave energy flux  
+ "Net_shortwave_flux_W.m2.",
+  "SWin.W.m2.",
+  "SWup.W.m2.",
+# # net shortwave energy flux  
+  "Net_longwave_flux_W.m2." 
+  "LWin.W.m2.",
+  "LWup.W.m2.",
+##  # net radiation 
+  "Net_radiation_W.m2.", 
+  "Net_shortwave_flux_W.m2.",
+  "Net_longwave_flux_W.m2.",
+### latent heat flux in air
+  "Latent_heat_flux_over_canopy_W.m2.", 
+  "Canopy_fraction...",
+  "LEg_veg.W.m2.",
+  "LEv.W.m2.",
+  "Canopy_fraction...", 
+  "LEg_unveg.W.m2.",
+  "Sensible_heat_flux_over_canopy_W.m2.",
+  "Canopy_fraction...",
+  "Hg_veg.W.m2.",
+  "Hv.W.m2.",
+  "Canopy_fraction...", 
+  "Hg_unveg.W.m2.",
+  "Energy_budget_storage_W.m2.",
+  "Net_radiation_W.m2.",
+  "Latent_heat_flux_over_canopy_W.m2.", 
+  "Sensible_heat_flux_over_canopy_W.m2.",
+  "Soil_heat_flux.W.m2.")

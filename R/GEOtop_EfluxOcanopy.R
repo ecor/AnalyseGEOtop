@@ -4,8 +4,8 @@ NULL
 #'	
 #' Calculation of latent and sensible heat fluxes over canopy from GEOtop point output file
 #'  
-#' @param data}{list, containing zoo objects of latent and sensible heat fluxes (ground veg - g_veg, ground bare - g_unveg, canopy - veg, canopy fraction - cf); list names: "LE"  and "H", zoo header refers to GEOtop point file
-#' @param canopy_fraction}{numeric, \code{default = NULL}, canopy fraction for simulation point, set if not available from simulation point output
+#' @param data list, containing zoo objects of latent and sensible heat fluxes (ground veg - g_veg, ground bare - g_unveg, canopy - veg, canopy fraction - cf); list names: "LE"  and "H", zoo header refers to GEOtop point file
+#' @param canopy_fraction numeric, \code{default = NULL}, canopy fraction for simulation point, set if not available from simulation point output
 #' 
 #' 
 #' @export

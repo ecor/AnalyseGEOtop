@@ -9,4 +9,9 @@ NULL
 #' @format data.frame
 #' @source www.eurac.edu
 #' @author Johannes Brenner
+#' 
+#' @aliases EnergyFluxes_df ET_B2
+#' 
+#' 
+    
 NULL

@@ -2,17 +2,19 @@
 % Please edit documentation in R/observation_B2.R
 \docType{data}
 \name{observation_B2}
+\alias{B2_d}
+\alias{B2_h}
 \alias{observation_B2}
 \title{observation_B2}
-\format{data.frame}
+\format{list containing zoo objects (hourly and daily data)}
 \source{
 www.eurac.edu
 }
 \usage{
-data(observation_B2)
+data(observations_B2)
 }
 \description{
-lookup_tbl_observation ...WRITE A DESCRIPTION
+lookup_tbl_observation Observational data LTER Mazia/Matsch station B2, hourly and daily data aggregation
 }
 \author{
 Johannes Brenner

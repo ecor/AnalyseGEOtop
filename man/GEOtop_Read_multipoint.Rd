@@ -12,6 +12,8 @@ GEOtop_Read_multipoint(path, model_run, stations, val_aggr, soil_files,
 
 \item{model_run}{name of simulation folder}
 
+\item{stations}{character vector, names of GEOtop output sites}
+
 \item{val_aggr}{aggregation performed on output data. "h": hourly; "d": daily}
 
 \item{soil_files}{boolean, TRUE: soil files are provided as GEOtop input. FALSE: soil is parameterized in the geotop.inpts file}
@@ -19,8 +21,6 @@ GEOtop_Read_multipoint(path, model_run, stations, val_aggr, soil_files,
 \item{lc_classes}{character vector, names of landcover classes in GEOtop simulation}
 
 \item{linux}{boolean, TRUE: working on linux laptop, FALSE: working on windows laptop; for path retrieval via \emph{data(SWCinfo)}}
-
-\item{station}{character vector, names of GEOtop output sites}
 }
 \description{
 Read multi point output from GEOtop simulation using the \pkg{geotopbricks} package.

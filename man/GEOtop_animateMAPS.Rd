@@ -8,6 +8,8 @@ GEOtop_animateMAPS(wpath, mapkey, layers, soil_files, variable, limits, legend,
   lowcol = "#f7fbff", highcol = "#08306b", delay_value = NULL)
 }
 \arguments{
+\item{wpath}{path into GEOtop simulation}
+
 \item{mapkey}{keyword name; see package \emph{geotopbricks}, function \code{\link{get.geotop.inpts.keyword.value}}, argument \emph{keyword}}
 
 \item{layers}{default = NULL, for variables without layering e.g. snow water eqivalent; integer vector defining layers which should be processed for data with layerinf, e.g. soil moisture}
@@ -16,6 +18,8 @@ GEOtop_animateMAPS(wpath, mapkey, layers, soil_files, variable, limits, legend,
 
 \item{variable}{character, variable characterization}
 
+\item{limits}{argument for \code{\link{GEOtop_ReadPlotRst}}}
+
 \item{legend}{character, legend characterization, e.g. \code{"vol\%"} for soil moisture data}
 
 \item{lowcol}{minimum colour for visualization, default = \code{"#f7fbff"}}
@@ -23,10 +27,6 @@ GEOtop_animateMAPS(wpath, mapkey, layers, soil_files, variable, limits, legend,
 \item{highcol}{maximum colour for visualization, default = "#08306b"; default is creating a blue       colour}
 
 \item{delay_value}{default = NULL, argument for function convert (ImageMagick), display the next image after pausing}
-
-\item{path}{path into GEOtop simulation}
-
-\item{map}{numeric, vector setting y-limits for plot}
 }
 \value{
 .gif animation file in folder "path/gif"
